@@ -66,7 +66,7 @@ async def Command(self, message):
             await message.reply("Logged out")
             await self.logout()
             print("\033c", end="")
-            print(colored.Colored(f"[BOT] [{TimeInUTC}] Logged out.", "red"))
+            os.system(colored.Colored(f"[BOT] [{TimeInUTC}] Logged out.", "red"))
         else:
             await message.reply("Can't Logout. The Bot owner has disabled this command!")
 
@@ -83,7 +83,7 @@ async def Command(self, message):
             if self.Settings["ChangeBattlePassInfoOnCommand"] or HasFullAccess:
                 await self.user.party.me.set_battlepass_info(has_purchased=bool(args[1]), level=int(args[2]), self_boost_xp=int(args[3]), friend_boost_xp=int(args[4]))
                 await message.reply("New Battle Pass Info set")
-                print(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] New Battle Pass Info set by {message.author.display_name}", "green"))
+                os.system(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] New Battle Pass Info set by {message.author.display_name}", "green"))
             else:
                 await message.reply("Can't set new Battle Pass Info. The Bot owner has disabled this command!")
         except:
@@ -93,7 +93,7 @@ async def Command(self, message):
         if self.Settings["ChangeStatusOnCommand"] or HasFullAccess:
             await self.send_status(message.content[8:])
             await message.reply(f"Status set to : {message.content[8:]}")
-            print(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] New status set by {message.author.display_name}", "green"))
+            os.system(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] New status set by {message.author.display_name}", "green"))
         else:
             await message.reply("Can't set new status. The Bot owner has disabled this command!")
 
@@ -110,7 +110,7 @@ async def Command(self, message):
                 for Member in self.user.party.members:
                     Members.append(Member)
                 await self.user.party.me.leave()
-                print(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] Changed Platform to {(str((self.platform))[9:]).lower().capitalize()}", "green"))
+                os.system(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] Changed Platform to {(str((self.platform))[9:]).lower().capitalize()}", "green"))
                 await message.reply(f"Successfuly changed Platform to {(str((self.platform))[9:]).lower().capitalize()}")
 
                 for Member in Members:
@@ -126,7 +126,7 @@ async def Command(self, message):
                 for Member in self.user.party.members:
                     Members.append(Member)
                 await self.user.party.me.leave()
-                print(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] Changed Platform to {(str((self.platform))[9:]).lower().capitalize()}", "green"))
+                os.system(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] Changed Platform to {(str((self.platform))[9:]).lower().capitalize()}", "green"))
                 await message.reply(f"Successfuly changed Platform to {(str((self.platform))[9:]).lower().capitalize()}")
 
                 for Member in Members:
@@ -147,7 +147,7 @@ async def Command(self, message):
                 try:
                     await User.kick()
                     await message.reply("Kicked {User.display_name}")
-                    print(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] Kicked {User.display_name}", "red"))
+                    os.system(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] Kicked {User.display_name}", "red"))
                 except fortnitepy.Forbidden:
                     await message.reply(f"Can't kick {User.display_name}.I am not the leader of the party.")
             else:
@@ -166,7 +166,7 @@ async def Command(self, message):
                 try:
                     await User.promote()
                     await message.reply(f"Promoted {User.display_name}")
-                    print(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] Promoted {User.display_name}", "green"))
+                    os.system(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] Promoted {User.display_name}", "green"))
                 except fortnitepy.Forbidden:
                     await message.reply(f"Can't Promote {User.display_name}, I am not the party leader")
             else:
@@ -190,7 +190,7 @@ async def Command(self, message):
                 else:
                     Friend = self.get_friend(User.id)
                     await Friend.invite()
-                    print(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] Invited {Friend.display_name}", "green"))
+                    os.system(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] Invited {Friend.display_name}", "green"))
                     await message.reply(f"Invited {Friend.display_name}")
             except fortnitepy.errors.PartyError:
                 await message.reply(f"Can't invite {User.display_name}, the party is full.")
@@ -201,7 +201,7 @@ async def Command(self, message):
             await asyncio.sleep(2)
             await self.user.party.me.leave()
             await message.reply("Successfuly left Party.")
-            print(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] Left party", "red"))
+            os.system(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] Left party", "red"))
         else:
             await message.reply("Can't leave party. The Bot owner has disabled this command!")
 
@@ -209,7 +209,7 @@ async def Command(self, message):
         if self.Settings["SetReadyOnCommand"] or HasFullAccess:
             await self.user.party.me.set_ready(True)
             await message.reply("Successfuly set my readiness to ready")
-            print(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] Set readiness to ready", "green"))
+            os.system(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] Set readiness to ready", "green"))
         else:
             await message.reply("Can't set my readiness to ready. The Bot owner has disabled this command!")
 
@@ -217,7 +217,7 @@ async def Command(self, message):
         if self.Settings["SetNotReadyOnCommand"] or HasFullAccess:
             await self.user.party.me.set_ready(False)
             await message.reply("Successfuly set my readiness to not ready")
-            print(colored.Colored(f"[BOT {self.user.display_namee}] [{TimeInUTC}] Set readiness to not ready", "green"))
+            os.system(colored.Colored(f"[BOT {self.user.display_namee}] [{TimeInUTC}] Set readiness to not ready", "green"))
         else:
             await message.reply("Can't set my readiness to not ready. The Bot owner has disabled this command!")
 
@@ -229,12 +229,12 @@ async def Command(self, message):
                 await self.user.party.me.clear_emote()
                 if self.user.party.me.emote is None:
                     await message.reply("Stopped Dancing!")
-                    print(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] Stopped dancing", "green"))
+                    os.system(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] Stopped dancing", "green"))
                 else:
                     await self.user.party.me.set_emote("EID_InvaildEmoteToStopDancing")
                     if self.user.party.me.emote is None:
                         await message.reply("Stopped Dancing!")
-                        print(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] Stopped dancing", "green"))
+                        os.system(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] Stopped dancing", "green"))
         else:
             await message.reply("Can't set stop dancing. The Bot owner has disabled this command!")
 
@@ -247,7 +247,7 @@ async def Command(self, message):
             try:
                 await self.add_friend(User.id)
                 await message.reply(f"Friend request send to {User.display_name}")
-                print(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] Added {User.display_name}", "green"))
+                os.system(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] Added {User.display_name}", "green"))
             except fortnitepy.errors.HTTPException as Error:
                 Error2Send = Error.message
                 for message_var in Error.message_vars:
@@ -265,7 +265,7 @@ async def Command(self, message):
                 if self.get_friend(User.id) is not None:
                     await self.remove_friend(User.id)
                     await message.reply(f"Removed {User.display_name} as my friend")
-                    print(colored.Colored(f"Removed {User.display_name} as my friend","red"))
+                    os.system(colored.Colored(f"Removed {User.display_name} as my friend","red"))
                 else:
                     await message.reply("Can't find user in my friend list")
             else:
@@ -288,7 +288,7 @@ async def Command(self, message):
                 try:
                     await self.remove_friend(message.author.id)
                     await message.reply("Removed you as my friend")
-                    print(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] Removed {message.author.display_name} as my friend", "red"))
+                    os.system(colored.Colored(f"[BOT {self.user.display_name}] [{TimeInUTC}] Removed {message.author.display_name} as my friend", "red"))
                 except fortnitepy.errors.HTTPException as Error:
                     Error2Send = Error.message
                     for message_var in Error.message_vars:
@@ -449,6 +449,7 @@ async def Command(self, message):
                     allvariants += f'{variant["channel"]}:\n'
                     for v in variant["tags"]:
                         allvariants += f'-{v["name"][Lang]}\n'
+                await message.reply(allvariants)
             else:
                 await message.reply("This skin doesn't have any variants or the server isn't updated")
 
