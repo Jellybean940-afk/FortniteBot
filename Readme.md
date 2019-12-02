@@ -4,6 +4,9 @@
 
 > With EasyFNBot you can easily create you own Fortnite Lobby Bot in less then 5 minutes
 
+## Discord
+<iframe src="https://discordapp.com/widget?id=629295115751522305&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+
 ## Installation
 
 > 1. Download and unzip [this](https://github.com/LupusLeaks/EasyFNBot/releases/download/EasyFNBot/EasyFNBot.zip)
