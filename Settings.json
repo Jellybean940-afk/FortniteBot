@@ -1,0 +1,59 @@
+{
+    "BotVersion": "0.0.1",
+    "Email": "YOUR_EMAIL",
+    "Password": "YOUR_PASSWORD",
+    "Platform": "Playstation",
+    "SeasonLevel": 100,
+    "Banner": "OtherBanner28",
+    "CustomStatus": "Follow @LupusLeaks on Twitter",
+    "GiveFullAccessTo": "",
+    "LogoutOnCommand": true,
+    "RestartOnCommand": true,
+
+    "InviteAllBotsOnCommand": true,
+    "AcceptAllFriendRequests": true,
+    "AcceptIncomingFriendRequest": true,
+    "InviteFriendOnFriendAdded": true,
+    "SendFriendRequestOnFriendRemove": true,
+    "JoinPartyOnInvitation": true,
+
+    "SetSkinOnCommand": true,
+    "DefaultSkin": "Ghoul Trooper",
+
+    "SetBackpackOnCommand": true,
+    "DefaultBackpack": "",
+
+    "SetEmoteOnCommand": true,
+    "LetOthersStopEmote": true,
+    "EmoteAfterJoiningParty": true,
+    "EmoteName": "True Heart",
+
+    "KickMembersOnCommand": true,
+    "PromoteMembersOnCommand": true,
+    "InviteUserOnCommand": true,
+    "LeavePartyOnCommand": true,
+    "ThanksOnPromote": true,
+
+    "SendFriendRequestsOnCommand": true,
+    "RemoveOthersOnCommand": true,
+
+    "ChangeBattlePassInfoOnCommand": true,
+    "ChangeStatusOnCommand": true,
+    "ChangeBannerOnCommand": true,
+    "SetReadyOnCommand": true,
+    "SetNotReadyOnCommand": true,
+
+    "SendCurrentFriendCountOnCommand": true,
+    "SendCurrentBlockedUserCountOnCommand": true,
+    "SendShopPriceOnCommand": true,
+    "SendAssistedChallengeOnCommand": true,
+    "SendCurrentBannerNameOnCommand": true,
+    "SendIDOnCommand": true,
+    "SendCurrentPartyLeaderOnCommand": true,
+    "SendTimeBotJoinedTheLobbyOnCommand": true,
+    "SendPartyInfosOnCommand": true,
+
+    "ChangePlatformOnCommand": true,
+    "TryToRejoinOldParty": true,
+    "ReinviteOldPartyMembers": false
+}
