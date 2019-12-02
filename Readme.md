@@ -6,7 +6,7 @@
 
 ## Installation
 
-> 1. Download and unzip [this](https://github.com/LupusLeaks/EasyFNBot/archive/master.zip)
+> 1. Download and unzip [this](https://github.com/LupusLeaks/EasyFNBot/releases/download/EasyFNBot/EasyFNBot.zip)
 > 2. In the unzipped folder open "Settings.json" and modify it as you want
 > 3. Run "Start.bat" , if you close the command prompt your bot will shut down
 
